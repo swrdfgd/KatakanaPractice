@@ -53,14 +53,89 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+
+<script>
+
+kamusMirip ={
+"a": ["o"],
+"ba": ["ke","ma","ni","po"],
+"bo": ["ge"],
+"he": ["ku"],
+"ji": ["chi"],
+"n": ["re"],
+"ni": ["ba","ha"],
+"pi": ["hi"],
+"po": ["ba","ge","pa"],
+"se": ["za"],
+"to": ["yo"],
+}
+
+</script>
+
+
 <script>
   //varGlobal
-  katakana = [  ["ア", "a"],   ["イ", "i"],   ["ウ", "u"],   ["エ", "e"],   ["オ", "o"],   ["カ", "ka"],   ["キ", "ki"],   ["ク", "ku"],   ["ケ", "ke"],   ["コ", "ko"],   ["サ", "sa"],   ["シ", "shi"],   ["ス", "su"],   ["セ", "se"],   ["ソ", "so"],   ["タ", "ta"],   ["チ", "chi"],   ["ツ", "tsu"],   ["テ", "te"],   ["ト", "to"],   ["ナ", "na"],   ["ニ", "ni"],   ["ヌ", "nu"],   ["ネ", "ne"],   ["ノ", "no"],   ["ハ", "ha"],   ["ヒ", "hi"],   ["フ", "fu"],   ["ヘ", "he"],   ["ホ", "ho"],   ["マ", "ma"],   ["ミ", "mi"],   ["ム", "mu"],   ["メ", "me"],   ["モ", "mo"],   ["ヤ", "ya"],   ["ユ", "yu"],   ["ヨ", "yo"],   ["ラ", "ra"],   ["リ", "ri"],   ["ル", "ru"],   ["レ", "re"],   ["ロ", "ro"],   ["ワ", "wa"],   ["ヲ", "wo"],   ["ン", "n"],   ["ガ", "ga"],   ["ギ", "gi"],   ["グ", "gu"],   ["ゲ", "ge"],   ["ゴ", "go"],   ["ザ", "za"],   ["ジ", "ji"],   ["ズ", "zu"],   ["ゼ", "ze"],   ["ゾ", "zo"],   ["ダ", "da"],   ["ヂ", "ji"],   ["ヅ", "dzu"],   ["デ", "de"],   ["ド", "do"],   ["バ", "ba"],   ["ビ", "bi"],   ["ブ", "bu"],   ["ベ", "be"],   ["ボ", "bo"],   ["パ", "pa"],   ["ピ", "pi"],   ["プ", "pu"],   ["ペ", "pe"],   ["ポ", "po"],  ]; 
-  koleksiSoalDimainkan = [];
+
+  vokalLatin = "aiueo";
+  hiragana = [  ["ア", "a"],   ["イ", "i"],   ["ウ", "u"],   ["エ", "e"],   ["オ", "o"],   ["カ", "ka"],   ["キ", "ki"],   ["ク", "ku"],   ["ケ", "ke"],   ["コ", "ko"],   ["サ", "sa"],   ["シ", "shi"],   ["ス", "su"],   ["セ", "se"],   ["ソ", "so"],   ["タ", "ta"],   ["チ", "chi"],   ["ツ", "tsu"],   ["テ", "te"],   ["ト", "to"],   ["ナ", "na"],   ["ニ", "ni"],   ["ヌ", "nu"],   ["ネ", "ne"],   ["ノ", "no"],   ["ハ", "ha"],   ["ヒ", "hi"],   ["フ", "fu"],   ["ヘ", "he"],   ["ホ", "ho"],   ["マ", "ma"],   ["ミ", "mi"],   ["ム", "mu"],   ["メ", "me"],   ["モ", "mo"],   ["ヤ", "ya"],   ["ユ", "yu"],   ["ヨ", "yo"],   ["ラ", "ra"],   ["リ", "ri"],   ["ル", "ru"],   ["レ", "re"],   ["ロ", "ro"],   ["ワ", "wa"],   ["ヲ", "wo"],   ["ン", "n"],   ["ガ", "ga"],   ["ギ", "gi"],   ["グ", "gu"],   ["ゲ", "ge"],   ["ゴ", "go"],   ["ザ", "za"],   ["ジ", "ji"],   ["ズ", "zu"],   ["ゼ", "ze"],   ["ゾ", "zo"],   ["ダ", "da"],   ["ヂ", "ji"],   ["ヅ", "dzu"],   ["デ", "de"],   ["ド", "do"],   ["バ", "ba"],   ["ビ", "bi"],   ["ブ", "bu"],   ["ベ", "be"],   ["ボ", "bo"],   ["パ", "pa"],   ["ピ", "pi"],   ["プ", "pu"],   ["ペ", "pe"],   ["ポ", "po"],  ]; 
+  hiragana2 = [  ["ア", "a"],   ["イ", "i"],   ["ウ", "u"],   ["エ", "e"],   ["オ", "o"],   ["カ", "ka"],   ["キ", "ki"],   ["ク", "ku"],   ["ケ", "ke"],   ["コ", "ko"],   ["サ", "sa"],   ["シ", "shi"],   ["ス", "su"],   ["セ", "se"],   ["ソ", "so"],   ["タ", "ta"],   ["チ", "chi"],   ["ツ", "tsu"],   ["テ", "te"],   ["ト", "to"],   ["ナ", "na"],   ["ニ", "ni"],   ["ヌ", "nu"],   ["ネ", "ne"],   ["ノ", "no"],   ["ハ", "ha"],   ["ヒ", "hi"],   ["フ", "fu"],   ["ヘ", "he"],   ["ホ", "ho"],   ["マ", "ma"],   ["ミ", "mi"],   ["ム", "mu"],   ["メ", "me"],   ["モ", "mo"],   ["ヤ", "ya"],   ["ユ", "yu"],   ["ヨ", "yo"],   ["ラ", "ra"],   ["リ", "ri"],   ["ル", "ru"],   ["レ", "re"],   ["ロ", "ro"],   ["ワ", "wa"],   ["ヲ", "wo"],   ["ン", "n"],   ["ガ", "ga"],   ["ギ", "gi"],   ["グ", "gu"],   ["ゲ", "ge"],   ["ゴ", "go"],   ["ザ", "za"],   ["ジ", "ji (zi)"],   ["ズ", "zu"],   ["ゼ", "ze"],   ["ゾ", "zo"],   ["ダ", "da"],   ["ヂ", "ji (di)"],   ["ヅ", "dzu"],   ["デ", "de"],   ["ド", "do"],   ["バ", "ba"],   ["ビ", "bi"],   ["ブ", "bu"],   ["ベ", "be"],   ["ボ", "bo"],   ["パ", "pa"],   ["ピ", "pi"],   ["プ", "pu"],   ["ペ", "pe"],   ["ポ", "po"],  ]; 
+  
+
+  let koleksiSoalDimainkan = [];
   skor = 0;
   banyakHati = 3;
 
   
+</script>
+
+<script>
+//tambah Yoon
+adaYaYuYo = [false,false,false]
+cekerYoon = []
+function tambahYoon(soal){
+
+   if (soal[1]=='ya'){adaYaYuYo[0]=true}
+   if (soal[1]=='yu'){adaYaYuYo[1]=true}
+   if (soal[1]=='yo'){adaYaYuYo[2]=true}
+   if (!adaYaYuYo.includes(true)){return}
+   if ((soal[1][soal[1].length-1] != 'i')||(soal[1]=='i')){return}
+ 
+   var hasil = [];
+   hasil.push(soal[0])
+   if (soal[0] == 'キ'){hasil.push('ky')}
+   if (soal[0] == 'シ'){hasil.push('sh')}
+   if (soal[0] == 'チ'){hasil.push('ch')}
+   if (soal[0] == 'ニ'){hasil.push('ny')}
+   if (soal[0] == 'ヒ'){hasil.push('hy')}
+   if (soal[0] == 'ミ'){hasil.push('my')}
+   if (soal[0] == 'リ'){hasil.push('ry')}
+   if (soal[0] == 'ギ'){hasil.push('gy')}
+   if (soal[0] == 'ジ'){hasil.push('j')}
+   if (soal[0] == 'ビ'){hasil.push('by')}
+   if (soal[0] == 'ピ'){hasil.push('py')}
+   if (hasil.length < 2){return}
+   
+   let yauoInd = Math.floor(Math.random()*3);
+   while (adaYaYuYo[yauoInd] == false){yauoInd = (yauoInd+1)%3;}
+   
+   if (yauoInd==0){hasil[0] += 'ャ'; hasil[1] += 'a'}
+   if (yauoInd==1){hasil[0] += 'ュ'; hasil[1] += 'u'}
+   if (yauoInd==2){hasil[0] += 'ョ'; hasil[1] += 'o'}
+  
+
+   if (soal.length < 3){
+     if (cekerYoon.includes(hasil[1])){return};
+     cekerYoon.push(hasil[1]);
+     hiragana.push(hasil);
+   }
+   else{
+     if (cekerYoon.includes(hasil[1]+'2')){return};
+     cekerYoon.push(hasil[1]+'2');
+     hiragana2.push(hasil);
+   }
+
+   
+}
 </script>
 
 <script>
@@ -120,16 +195,15 @@
 <script>
   //jawaban
   neutMoji = [
-"😉","😃","😄","😁","😆","😅","🤣","😂","🙂","🙃","😉","😊","😇","😘","😗","☺","😚","😙","😙","😛","😜","🤪","😝","🤗","🤭","😏","😌","🤓","🧐","😯","😲","😳","😱","😺","😸","😹","😼","😽","🙀","🙈","🙉","🙊","🧒","👦","🧑","👧","👶","👱","👨","🧔","👨‍🦰","👨‍🦱","👨‍🦳","👨‍🦲","👩","👩‍🦰","👩‍🦱","👩‍🦳","👩‍🦲","👱‍♀️","👱‍♂️","🧓","👴","👵","🙎","🙎‍♂️","🙎‍♀️","ᕦ( ´･ , ･` )ᕤ","( ' ᗣ ' )","༼ ◎ ᗣ ◎ ༽","＼ [ ¬ 皿 ¬ ] ง","(つ - ᴗ - )つ","ヽ ( ◎ ▿▿▿▿ ◎ ) /","ヽ ༼ ᗒ //// ᗕ ༽ ~","༼ ◕ ϖ ◕ ༽","d( ˘ 人 ˘ )b","( ◎ , ◎ )","༼ > 皿 < ༽","⊙ □ ☉","ᕦ( ´･ ㅂ ･` )ᕤ","┗ ༼ * 人 * ༽ ง","(つ •́ , •̀ )つ","o ³ o","(╯ ര ᗣ ര )╯","> ω <","c [ ￣ ڡ ￣ ] ┛"
+"😉","😃","😄","😁","😆","😅","🤣","😂","🙂","🙃","😉","😊","😇","😘","😗","☺","😚","😙","😙","😛","😜","🤪","😝","🤗","🤭","😏","😌","🤓","🧐","😯","😲","😳","😱","😺","😸","😹","😼","😽","🙀","🙈","🙉","🙊","🧒","👦","🧑","👧","👶","👱","👨","🧔","👨‍🦰","👨‍🦱","👨‍🦳","👨‍🦲","👩","👩‍🦰","👩‍🦱","👩‍🦳","👩‍🦲","👱‍♀️","👱‍♂️","🧓","👴","👵","🙎","🙎‍♂️","🙎‍♀️","ᕦ( ´･ , ･` )ᕤ","( ' ᗣ ' )","༼ ◎ ᗣ ◎ ༽","＼ [ ¬ 皿 ¬ ] ง","(つ - ᴗ - )つ","ヽ ( ◎ ▿▿▿▿ ◎ ) /","ヽ ༼ ᗒ //// ᗕ ༽ ~","༼ ◕ ϖ ◕ ༽","d( ˘ 人 ˘ )b","( ◎ , ◎ )","༼ > 皿 < ༽","⊙ □ ☉","ᕦ( ´･ ㅂ ･` )ᕤ","┗ ༼ * 人 * ༽ ง","(つ •́ , •̀ )つ","o ³ o","(╯ ര ᗣ ര )╯","> ω <","c [ ￣ ڡ ￣ ] ┛","┌ ༼ ¬ ㅂ ¬ ༽ 乂 ༼ ಥ __ ಥ ༽ ﾉ","c ༼ ❛ □ ❛ ༽ ゞ","d( ͒ ω ͒ )b","눈 ֊ 눈"
 ];
 
   posMoji = [
-"🥰","😍","🤩","🤯","🤠","🥳","😎","😻","💘","💝","💖","💗","💓","💞","💕","💟","❣","❤","🧡","💛","💚","💙","💜","🤎","🖤","🤍","💋","💯","👌","✌","🤞","🤟","🤘","👍","✊","👊","🤛","🤜","👏","💪","🙆","🙆‍♂️","🙆‍♀️"
+"🥰","😍","🤩","🤯","🤠","🥳","😎","😻","💘","💝","💖","💗","💓","💞","💕","💟","❣","❤","🧡","💛","💚","💙","💜","🤎","🖤","🤍","💋","💯","👌","✌","🤞","🤟","🤘","👍","✊","👊","🤛","🤜","👏","💪","🙆","🙆‍♂️","🙆‍♀️","🍇",
 ];
 
   negMoji = [
-"🤔","🤨","😐","😑","😶","😒","🙄","😬","😔","😵","😕","😟","🙁","☹","🥺","😦","😧","😨","😰","😥","😢","😭","😖","😣","😞","😓","😩","😫","🥱","😤","😡","😠","😈","👿","😿","😾","💔","👎","🙍","🙍‍♂️","🙍‍♀️","🙅","🙅‍♂️","🙅‍♀️","🤦","🤦‍♂️","🤦‍♀️","🤷","🤷‍♂️","🤷‍♀️","(づ ´･ ▂ ･` )づ","( ᗒ ‸ ᗕ )","(づ ⌐■ ㅿ ■ )づ","༼ ⊙ 益 ☉ ༽","༼ > 皿 < ༽","ヽ ༼ •̀ ʖ •́ ༽ 7","┗ [ ╥ ʖ ╥ ] ~","d( ¬ __ ¬ )b","┌ ༼ * ‸ * ༽ ゞ","༼ •́ . •̀ ༽"
-];
+"🤔","🤨","😐","😑","😶","😒","🙄","😬","😔","😵","😕","😟","🙁","☹","🥺","😦","😧","😨","😰","😥","😢","😭","😖","😣","😞","😓","😩","😫","🥱","😤","😡","😠","😈","👿","😿","😾","💔","👎","🙍","🙍‍♂️","🙍‍♀️","🙅","🙅‍♂️","🙅‍♀️","🤦","🤦‍♂️","🤦‍♀️","🤷","🤷‍♂️","🤷‍♀️","(づ ´･ ▂ ･` )づ","( ᗒ ‸ ᗕ )","(づ ⌐■ ㅿ ■ )づ","༼ ⊙ 益 ☉ ༽","༼ > 皿 < ༽","ヽ ༼ •̀ ʖ •́ ༽ 7","┗ [ ╥ ʖ ╥ ] ~","d( ¬ __ ¬ )b","┌ ༼ * ‸ * ༽ ゞ","༼ •́ . •̀ ༽ ","ᕦ( 눈 __ 눈 )ᕤ"];
 
   posMoji = posMoji.concat(neutMoji);
   negMoji = negMoji.concat(neutMoji);
@@ -146,10 +220,22 @@
         skor += Math.ceil(Math.random()*koleksiSoalDimainkan.length);
       updateskor();
       document.getElementById('soal').innerHTML += `<br>${posMoji[Math.floor(Math.random()*posMoji.length)]} Correct! It's "${jawabanBenar}"`;
-
+      tambahYoon(soalTerpilih)
       if (Math.random() < 1/2){
-        koleksiSoalDimainkan.push(katakana[Math.floor(Math.random()*katakana.length)]);
-        koleksiSoalDimainkan.push(katakana[Math.floor(Math.random()*katakana.length)]);
+        if (Math.random() < 1/2){
+            koleksiSoalDimainkan.push(hiragana[Math.floor(Math.random()*hiragana.length)]);
+        }
+        else{
+            koleksiSoalDimainkan.push(hiragana2[Math.floor(Math.random()*hiragana2.length)]);
+            koleksiSoalDimainkan[koleksiSoalDimainkan.length-1].push('');
+        }
+        if (Math.random() < 1/2){
+            koleksiSoalDimainkan.push(hiragana[Math.floor(Math.random()*hiragana.length)]);
+        }
+        else{
+            koleksiSoalDimainkan.push(hiragana2[Math.floor(Math.random()*hiragana2.length)]);
+            koleksiSoalDimainkan[koleksiSoalDimainkan.length-1].push('');
+        }
       }
     }
       else {
@@ -175,13 +261,37 @@
     if (koleksiSoalDimainkan.length < 1){mulai();return}
     var daftarOpsi = ['A','B','C','D'];
     soalTerpilih = koleksiSoalDimainkan[Math.floor(Math.random()*koleksiSoalDimainkan.length)];
-        
+      
+      if (soalTerpilih.length < 3){
       soal = soalTerpilih[0];
       jawabanBenar = soalTerpilih[1];
-      opsiA = katakana[Math.floor(Math.random()*katakana.length)][1];
-      opsiB = katakana[Math.floor(Math.random()*katakana.length)][1];
-      opsiC = katakana[Math.floor(Math.random()*katakana.length)][1];
-      opsiD = katakana[Math.floor(Math.random()*katakana.length)][1];
+      opsiA = '' + hiragana[Math.floor(Math.random()*hiragana.length)][1];
+      opsiB = '' + hiragana[Math.floor(Math.random()*hiragana.length)][1];
+      opsiC = '' + hiragana[Math.floor(Math.random()*hiragana.length)][1];
+      opsiD = '' + hiragana[Math.floor(Math.random()*hiragana.length)][1];
+      if ((skor > 99)&&(jawabanBenar != 'n')){
+         if (Math.random() < 1/2){if (Math.random() < 1/2){if (vokalLatin.includes(opsiA[opsiA.length-1])){opsiA=opsiA.substring(0,opsiA.length-1)+jawabanBenar[jawabanBenar.length-1]}} else {if (jawabanBenar.length>1){opsiA = jawabanBenar.substring(0,jawabanBenar.length-1) + vokalLatin[Math.floor(vokalLatin.length*Math.random())]}}}
+         if (Math.random() < 1/2){if (Math.random() < 1/2){if (vokalLatin.includes(opsiB[opsiB.length-1])){opsiB=opsiB.substring(0,opsiB.length-1)+jawabanBenar[jawabanBenar.length-1]}} else {if (jawabanBenar.length>1){opsiB = jawabanBenar.substring(0,jawabanBenar.length-1) + vokalLatin[Math.floor(vokalLatin.length*Math.random())]}}}
+         if (Math.random() < 1/2){if (Math.random() < 1/2){if (vokalLatin.includes(opsiC[opsiC.length-1])){opsiC=opsiC.substring(0,opsiC.length-1)+jawabanBenar[jawabanBenar.length-1]}} else {if (jawabanBenar.length>1){opsiC = jawabanBenar.substring(0,jawabanBenar.length-1) + vokalLatin[Math.floor(vokalLatin.length*Math.random())]}}}
+         if (Math.random() < 1/2){if (Math.random() < 1/2){if (vokalLatin.includes(opsiD[opsiD.length-1])){opsiD=opsiD.substring(0,opsiD.length-1)+jawabanBenar[jawabanBenar.length-1]}} else {if (jawabanBenar.length>1){opsiD = jawabanBenar.substring(0,jawabanBenar.length-1) + vokalLatin[Math.floor(vokalLatin.length*Math.random())]}}}
+
+      }
+      if (skor > 200){
+         if ((Math.random() < 1/2)&&(kamusMirip[jawabanBenar] != undefined)){daftarOpsiGanti = kamusMirip[jawabanBenar]; opsiA = '' + daftarOpsiGanti[Math.floor(daftarOpsiGanti.length*Math.random())];}
+         if ((Math.random() < 1/2)&&(kamusMirip[jawabanBenar] != undefined)){daftarOpsiGanti = kamusMirip[jawabanBenar]; opsiB = '' + daftarOpsiGanti[Math.floor(daftarOpsiGanti.length*Math.random())];}
+         if ((Math.random() < 1/2)&&(kamusMirip[jawabanBenar] != undefined)){daftarOpsiGanti = kamusMirip[jawabanBenar]; opsiC = '' + daftarOpsiGanti[Math.floor(daftarOpsiGanti.length*Math.random())];}
+         if ((Math.random() < 1/2)&&(kamusMirip[jawabanBenar] != undefined)){daftarOpsiGanti = kamusMirip[jawabanBenar]; opsiD = '' + daftarOpsiGanti[Math.floor(daftarOpsiGanti.length*Math.random())];}
+      }
+      }
+      else{
+      if (soalTerpilih.length > 3){soalTerpilih.splice(3);}
+      soal = soalTerpilih[1];
+      jawabanBenar = soalTerpilih[0];
+      opsiA = hiragana2[Math.floor(Math.random()*hiragana2.length)][0];
+      opsiB = hiragana2[Math.floor(Math.random()*hiragana2.length)][0];
+      opsiC = hiragana2[Math.floor(Math.random()*hiragana2.length)][0];
+      opsiD = hiragana2[Math.floor(Math.random()*hiragana2.length)][0];
+      }
       eval('opsi'+daftarOpsi[Math.floor(Math.random()*daftarOpsi.length)]+' = jawabanBenar;');
       opsi = [opsiA, opsiB, opsiC, opsiD]
       document.getElementById('soal').innerHTML = soal;
@@ -199,9 +309,20 @@
 <script>
   //Mulai
   function mulai(){
-    
-    koleksiSoalDimainkan.push(katakana[Math.floor(Math.random()*katakana.length)]);
-    koleksiSoalDimainkan.push(katakana[Math.floor(Math.random()*katakana.length)]);
+    if (Math.random() < 1/2){
+    koleksiSoalDimainkan.push(hiragana[Math.floor(Math.random()*hiragana.length)]);
+    }
+    else{
+    koleksiSoalDimainkan.push(hiragana2[Math.floor(Math.random()*hiragana2.length)]);
+    koleksiSoalDimainkan[koleksiSoalDimainkan.length-1].push('');
+    }
+    if (Math.random() < 1/2){
+    koleksiSoalDimainkan.push(hiragana[Math.floor(Math.random()*hiragana.length)]);
+    }
+    else{
+    koleksiSoalDimainkan.push(hiragana2[Math.floor(Math.random()*hiragana2.length)]);
+    koleksiSoalDimainkan[koleksiSoalDimainkan.length-1].push('');
+    }
     buatSoal();
   }
 </script>
